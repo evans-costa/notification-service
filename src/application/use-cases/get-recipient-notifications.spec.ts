@@ -5,7 +5,7 @@ import { GetRecipientNotifications } from "./get-recipient-notifications";
 
 describe("Count recipients notifications", () => {
     it('should be able to get recipient notification', async () => {
-        const notificationsRepository = new inMemoryNotificationRepository
+        const notificationsRepository = new inMemoryNotificationRepository();
         const getRecipientNotification = new GetRecipientNotifications(notificationsRepository)
 
         await notificationsRepository.create(makeNotification({

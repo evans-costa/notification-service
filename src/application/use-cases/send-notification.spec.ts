@@ -3,7 +3,7 @@ import { SendNotification } from "./send-notification"
 
 describe("Send notification", () => {
     it('should be able to send a notification', async () => {
-        const notificationRepository = new inMemoryNotificationRepository
+        const notificationRepository = new inMemoryNotificationRepository()
         const sendNotification = new SendNotification(notificationRepository)
 
         const { notification } = await sendNotification.execute({ // o sendNotification chama o método create
