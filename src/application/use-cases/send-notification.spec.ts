@@ -7,8 +7,8 @@ describe("Send notification", () => {
         const sendNotification = new SendNotification(notificationRepository)
 
         const { notification } = await sendNotification.execute({ // o sendNotification chama o método create
-            content: 'This is a notification',
             category: 'social',
+            content: 'This is a notification',
             recipientId: 'example-recipient-id'
         });
 

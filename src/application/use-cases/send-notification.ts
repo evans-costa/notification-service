@@ -18,7 +18,7 @@ interface SendNotificationRespose{
 export class SendNotification {
     constructor(private notificationRepository: NotificationsRepository) {}
 
-    async execute(request: SendNotificationRequest): Promise<SendNotificationRespose> {
+    async execute(request: SendNotificationRequest,): Promise<SendNotificationRespose> {
         const { recipientId, content, category } = request
 
         const notification = new Notification({

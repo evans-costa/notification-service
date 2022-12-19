@@ -1,5 +1,4 @@
 import { inMemoryNotificationRepository } from "../../../test/repositories/in-memory-notifications-repository"
-
 import { makeNotification } from "@test/factories/notification-factory";
 import { GetRecipientNotifications } from "./get-recipient-notifications";
 
@@ -29,6 +28,5 @@ describe("Count recipients notifications", () => {
             expect.objectContaining({ recipientId: 'recipient-1'}),
             expect.objectContaining({ recipientId: 'recipient-1'})
         ]))
-
     });
 });
