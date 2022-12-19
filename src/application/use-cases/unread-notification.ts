@@ -6,13 +6,13 @@ interface UnreadNotificationRequest {
     notificationId: string;
 }
 
-type UnreadNotificationRespose = void;
+type UnreadNotificationResponse = void;
 
 @Injectable()
 export class UnreadNotification {
     constructor(private notificationRepository: NotificationsRepository) {}
 
-    async execute(request: UnreadNotificationRequest): Promise<UnreadNotificationRespose> {
+    async execute(request: UnreadNotificationRequest): Promise<UnreadNotificationResponse> {
         const { notificationId } = request
 
         const notification = await this.notificationRepository.findById(notificationId);

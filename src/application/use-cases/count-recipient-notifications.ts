@@ -5,7 +5,7 @@ interface CountRecipientNotificationRequest {
     recipientId: string;
 }
 
-interface CountRecipientNotificationRespose {
+interface CountRecipientNotificationResponse {
     count: number
 }
 
@@ -13,7 +13,7 @@ interface CountRecipientNotificationRespose {
 export class CountRecipientNotification {
     constructor(private notificationRepository: NotificationsRepository) {}
 
-    async execute(request: CountRecipientNotificationRequest): Promise<CountRecipientNotificationRespose> {
+    async execute(request: CountRecipientNotificationRequest): Promise<CountRecipientNotificationResponse> {
         const { recipientId } = request
 
         const count = await this.notificationRepository.countManyByRecipientId(recipientId)
